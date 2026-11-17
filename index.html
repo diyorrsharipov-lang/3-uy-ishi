@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarBucks — New Cafe by StarBucks</title>
+  
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#121517',
+              deeper: '#0B0C0D',
+              card: '#16191D',
+              greenDark: '#237149',
+              greenLight: '#35C66B',
+              muted: '#D9D9D9',
+              footerMuted: '#BBB3B3',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121517;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    /* Custom Green Gradient text & backgrounds */
+    .brand-gradient {
+      background: linear-gradient(135deg, #237149 0%, #35C66B 100%);
+    }
+    .brand-gradient-text {
+      background: linear-gradient(135deg, #237149 0%, #35C66B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-gradient-reverse {
+      background: linear-gradient(315deg, #237149 0%, #35C66B 100%);
+    }
+    
+    /* Ambient Glow Circles */
+    .glow-sphere {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body id="top" class="bg-[#121517] text-white antialiased relative min-h-screen">
+
+  <!-- Ambient Glow Effects (Matching Figma Orbs) -->
+  <div class="glow-sphere w-[550px] h-[550px] bg-[#237149]/30 -top-32 right-0"></div>
+  <div class="glow-sphere w-[420px] h-[420px] bg-[#35C66B]/20 top-[600px] -left-20"></div>
+  <div class="glow-sphere w-[600px] h-[600px] bg-[#237149]/20 top-[1800px] right-0"></div>
+  <div class="glow-sphere w-[500px] h-[500px] bg-[#35C66B]/15 top-[2900px] -left-20"></div>
+  <div class="glow-sphere w-[550px] h-[550px] bg-[#237149]/25 top-[3900px] right-10"></div>
+
+  <!-- CONTAINER -->
+  <div class="relative z-10 max-w-[1512px] mx-auto px-6 sm:px-12 lg:px-20 overflow-hidden">
+
+    <!-- ========================================================================= -->
+    <!-- 1. NAVBAR -->
+    <!-- ========================================================================= -->
+    <header class="pt-8 sm:pt-12 pb-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#top" class="text-3xl sm:text-4xl font-extrabold tracking-tight brand-gradient-text transition-opacity hover:opacity-90">
+        StarBucks
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-8 sm:gap-14 text-base sm:text-[19px] font-normal text-[#D9D9D9]">
+        <a href="#top" class="text-white font-medium hover:text-[#35C66B] transition-colors">Home</a>
+        <a href="#products" class="hover:text-white transition-colors">Select</a>
+        <a href="#products" class="hover:text-white transition-colors">Shop</a>
+      </nav>
+    </header>
+
+
+    <!-- ========================================================================= -->
+    <!-- 2. HERO SECTION -->
+    <!-- ========================================================================= -->
+    <section class="pt-10 sm:pt-16 pb-16 lg:pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Content Column (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <!-- Main Heading -->
+        <h1 class="text-5xl sm:text-7xl lg:text-[80px] font-extrabold text-white leading-[1.08] tracking-tight">
+          New Cafe<br>
+          <span class="text-white">by StarBucks</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-[#D9D9D9] font-normal mt-7 max-w-xl leading-relaxed">
+          Have time to buy the most harmonious drinks in the <br class="hidden sm:inline">
+          new Starbucks coffee and don't forget about the discount!
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-9 flex flex-wrap items-center gap-5 sm:gap-6">
+          <a href="#products" class="brand-gradient text-white font-semibold text-lg sm:text-xl px-8 sm:px-10 py-4 rounded-full shadow-lg shadow-[#237149]/40 hover:brightness-110 hover:shadow-[#35C66B]/50 transition-all text-center">
+            Select a coffee
+          </a>
+          <a href="#about" class="bg-[#121517] border border-white/20 text-[#D9D9D9] hover:text-white hover:border-[#35C66B] font-normal text-lg sm:text-xl px-8 sm:px-10 py-4 rounded-full transition-all text-center">
+            More
+          </a>
+        </div>
+
+        <!-- Metrics / Stats Counter (Group 15 in Figma) -->
+        <div class="mt-14 sm:mt-16 pt-6 flex items-center gap-10 sm:gap-14 border-t border-white/10 max-w-lg">
+          <!-- Stat 1 -->
+          <div>
+            <div class="text-4xl sm:text-[54px] font-semibold text-white tracking-tight leading-none">9k+</div>
+            <div class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-2">Premium Users</div>
+          </div>
+          <!-- Stat 2 -->
+          <div>
+            <div class="text-4xl sm:text-[54px] font-semibold text-white tracking-tight leading-none">2k+</div>
+            <div class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-2">Happy Customer</div>
+          </div>
+          <!-- Stat 3 (Gradient Number) -->
+          <div>
+            <div class="text-4xl sm:text-[54px] font-semibold brand-gradient-text tracking-tight leading-none">28+</div>
+            <div class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-2">Awards Winning</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Hero Cup Image with Discount Star Badge (5 cols) -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <!-- Glow Circle behind Cup -->
+        <div class="absolute w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] bg-gradient-to-tr from-[#237149]/40 to-[#35C66B]/30 rounded-full blur-2xl"></div>
+
+        <!-- Main Starbucks Cup -->
+        <div class="relative z-10 w-full max-w-[440px] lg:max-w-[480px]">
+          <img src="assets/hero_cup.png" alt="Starbucks Iced Coffee Frappuccino" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500">
+        </div>
+
+        <!-- Floating 45% Star Badge (Star 1 in Figma) -->
+        <div class="absolute top-4 right-2 sm:right-6 z-20 w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center animate-pulse">
+          <!-- Multi-pointed star shape -->
+          <svg class="w-full h-full drop-shadow-xl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="starGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#237149"/>
+                <stop offset="100%" stop-color="#35C66B"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 0L61.2 24.5L88.3 14.6L78.4 41.7L100 50L78.4 61.2L88.3 88.3L61.2 78.4L50 100L38.8 78.4L11.7 88.3L21.6 61.2L0 50L21.6 38.8L11.7 11.7L38.8 21.6L50 0Z" fill="url(#starGrad1)" />
+          </svg>
+          <span class="absolute text-2xl sm:text-3xl font-extrabold text-white">45%</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 3. FEATURE HIGHLIGHTS BANNER (WHITE CARD: Group 28) -->
+    <!-- ========================================================================= -->
+    <section class="mt-12 sm:mt-20 mb-24 relative z-20">
+      <div class="relative max-w-[1140px] mx-auto bg-gradient-to-b from-white via-[#F5F5F5] to-[#EAEAEA] rounded-[36px] sm:rounded-[46px] p-8 sm:p-14 shadow-2xl border border-white/40">
+        
+        <!-- Floating "we have" Star Badge on top-left edge (Group 25 in Figma) -->
+        <div class="absolute -top-10 -left-4 sm:-left-8 z-30 w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+          <svg class="w-full h-full drop-shadow-xl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="badgeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#237149"/>
+                <stop offset="100%" stop-color="#35C66B"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 0L61.2 24.5L88.3 14.6L78.4 41.7L100 50L78.4 61.2L88.3 88.3L61.2 78.4L50 100L38.8 78.4L11.7 88.3L21.6 61.2L0 50L21.6 38.8L11.7 11.7L38.8 21.6L50 0Z" fill="url(#badgeGrad1)" />
+          </svg>
+          <span class="absolute text-center text-xs sm:text-base font-bold text-white uppercase tracking-wider leading-tight">we<br>have</span>
+        </div>
+
+        <!-- 3 Feature Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-8 text-center pt-4 sm:pt-0">
+          
+          <!-- Feature 1: Tasty -->
+          <div class="flex flex-col items-center">
+            <!-- Circular image with green gradient ring -->
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 brand-gradient shadow-lg flex items-center justify-center overflow-hidden">
+              <img src="assets/feature_coffee_cup.png" alt="Tasty Coffee" class="w-full h-full object-cover rounded-full">
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#121517] mt-5">Tasty</h3>
+            <p class="text-base sm:text-lg text-[#121517]/80 font-normal mt-2 max-w-xs">
+              We have the most delicious coffee
+            </p>
+          </div>
+
+          <!-- Feature 2: Fast -->
+          <div class="flex flex-col items-center">
+            <!-- Circular image with green gradient ring -->
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 brand-gradient shadow-lg flex items-center justify-center overflow-hidden">
+              <img src="assets/feature_cup_top.png" alt="Fast Coffee Service" class="w-full h-full object-cover rounded-full">
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#121517] mt-5">Fast</h3>
+            <p class="text-base sm:text-lg text-[#121517]/80 font-normal mt-2 max-w-xs">
+              Our cafe will serve you quickly
+            </p>
+          </div>
+
+          <!-- Feature 3: Available -->
+          <div class="flex flex-col items-center">
+            <!-- Circular image with green gradient ring -->
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 brand-gradient shadow-lg flex items-center justify-center overflow-hidden">
+              <img src="assets/feature_beans_cup.png" alt="Available Coffee Prices" class="w-full h-full object-cover rounded-full">
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#121517] mt-5">Available</h3>
+            <p class="text-base sm:text-lg text-[#121517]/80 font-normal mt-2 max-w-xs">
+              Cafe will serveat the most pleasant prices
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 4. "WE MAKE DELICIOUS" SECTION (Group 121 in Figma) -->
+    <!-- ========================================================================= -->
+    <section id="about" class="mt-20 sm:mt-32 mb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column: Iced Latte Card with Layered Accent -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <!-- Offset Green Accent Card behind (Figma Vector 15:16) -->
+        <div class="absolute w-[92%] h-[92%] bg-[#237149] rounded-[36px] -rotate-3 scale-[0.98] opacity-80 blur-[1px]"></div>
+
+        <!-- Main Photo Card -->
+        <div class="relative z-10 w-full max-w-[460px] rounded-[32px] overflow-hidden shadow-2xl border border-white/10 bg-[#16191D]">
+          <img src="assets/delicious_left_latte.png" alt="Starbucks Mint Iced Latte" class="w-full h-[480px] sm:h-[540px] object-cover">
+        </div>
+
+        <!-- Floating "we have" Star Badge on Photo (Group 26 in Figma) -->
+        <div class="absolute -top-8 -right-4 sm:-right-6 z-20 w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
+          <svg class="w-full h-full drop-shadow-xl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="badgeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#237149"/>
+                <stop offset="100%" stop-color="#35C66B"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 0L61.2 24.5L88.3 14.6L78.4 41.7L100 50L78.4 61.2L88.3 88.3L61.2 78.4L50 100L38.8 78.4L11.7 88.3L21.6 61.2L0 50L21.6 38.8L11.7 11.7L38.8 21.6L50 0Z" fill="url(#badgeGrad2)" />
+          </svg>
+          <span class="absolute text-center text-xs sm:text-base font-bold text-white uppercase tracking-wider leading-tight">we<br>have</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Heading, Description & Video Banner -->
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <!-- Title -->
+        <h2 class="text-5xl sm:text-7xl lg:text-[76px] font-extrabold text-white leading-[1.08] tracking-tight">
+          We make delicious
+        </h2>
+
+        <!-- Description -->
+        <p class="text-lg sm:text-xl text-[#D9D9D9] font-normal mt-6 leading-relaxed max-w-xl">
+          Only in 2021 we have made more than 100,000 orders for you, your loved ones, all of you, and in 2022 we are ready to destroy the market
+        </p>
+
+        <!-- Video Process Card (Group 30 in Figma) -->
+        <div class="mt-8 relative rounded-[28px] overflow-hidden border border-white/10 h-[220px] sm:h-[260px] shadow-2xl group max-w-xl">
+          <img src="assets/delicious_video_coffee.png" alt="Starbucks Coffee Cooking Process" class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700">
+          
+          <!-- Dark Overlay + Play Action Button -->
+          <div class="absolute inset-0 bg-black/35 flex items-center justify-center p-4">
+            <button class="brand-gradient text-white font-semibold text-lg sm:text-xl px-7 sm:px-9 py-3.5 rounded-full shadow-xl shadow-[#237149]/50 flex items-center gap-3 hover:brightness-110 transition-all cursor-pointer">
+              <!-- Play Triangle Icon -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <span>Cooking Process</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 5. "NEW OUR PRODUCTS" SECTION (Group 119 in Figma) -->
+    <!-- ========================================================================= -->
+    <section id="products" class="mt-24 sm:mt-36 mb-28">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+        <div>
+          <h2 class="text-5xl sm:text-7xl lg:text-[76px] font-extrabold text-white leading-[1.05] tracking-tight">
+            New Our<br>Products
+          </h2>
+        </div>
+        <div class="max-w-md">
+          <p class="text-base sm:text-lg text-[#D9D9D9] font-normal leading-relaxed">
+            Have time to buy the most harmonious drinks in the new Starbucks coffee and don't forget about the discount! Starbucks coffee and don't forget about the discount!
+          </p>
+        </div>
+      </div>
+
+      <!-- Products Grid & Navigation Arrow -->
+      <div class="relative">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+
+          <!-- Product Card 1 -->
+          <div class="bg-[#16191D] border border-white/10 rounded-[29px] p-6 flex flex-col items-center text-center relative overflow-hidden group hover:border-[#35C66B]/50 transition-all hover:shadow-2xl hover:shadow-[#237149]/20">
+            <!-- Radial glow background -->
+            <div class="absolute -top-10 w-44 h-44 rounded-full bg-gradient-to-b from-[#237149]/35 to-[#35C66B]/20 blur-xl pointer-events-none"></div>
+            <!-- Drink image -->
+            <div class="relative z-10 w-44 h-56 flex items-center justify-center">
+              <img src="assets/product_1.png" alt="Starbucks Drink" class="h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <!-- Info -->
+            <h4 class="text-2xl sm:text-3xl font-medium text-white mt-4">Fast</h4>
+            <p class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-1">Our cafe will serve you quickly</p>
+            <!-- Price & Size -->
+            <div class="flex items-baseline gap-3 mt-4 mb-5">
+              <span class="text-2xl sm:text-3xl font-medium text-white">7,45$</span>
+              <span class="text-base text-[#D9D9D9]">330 ml</span>
+            </div>
+            <!-- Button -->
+            <button class="w-full brand-gradient text-white font-semibold text-base py-3 rounded-full hover:brightness-110 shadow-md shadow-[#237149]/30 transition-all cursor-pointer">
+              Buy Product
+            </button>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="bg-[#16191D] border border-white/10 rounded-[29px] p-6 flex flex-col items-center text-center relative overflow-hidden group hover:border-[#35C66B]/50 transition-all hover:shadow-2xl hover:shadow-[#237149]/20">
+            <!-- Radial glow background -->
+            <div class="absolute -top-10 w-44 h-44 rounded-full bg-gradient-to-b from-[#237149]/35 to-[#35C66B]/20 blur-xl pointer-events-none"></div>
+            <!-- Drink image -->
+            <div class="relative z-10 w-44 h-56 flex items-center justify-center">
+              <img src="assets/product_2.png" alt="Starbucks Drink" class="h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <!-- Info -->
+            <h4 class="text-2xl sm:text-3xl font-medium text-white mt-4">Fast</h4>
+            <p class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-1">Our cafe will serve you quickly</p>
+            <!-- Price & Size -->
+            <div class="flex items-baseline gap-3 mt-4 mb-5">
+              <span class="text-2xl sm:text-3xl font-medium text-white">7,45$</span>
+              <span class="text-base text-[#D9D9D9]">330 ml</span>
+            </div>
+            <!-- Button -->
+            <button class="w-full brand-gradient text-white font-semibold text-base py-3 rounded-full hover:brightness-110 shadow-md shadow-[#237149]/30 transition-all cursor-pointer">
+              Buy Product
+            </button>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="bg-[#16191D] border border-white/10 rounded-[29px] p-6 flex flex-col items-center text-center relative overflow-hidden group hover:border-[#35C66B]/50 transition-all hover:shadow-2xl hover:shadow-[#237149]/20">
+            <!-- Radial glow background -->
+            <div class="absolute -top-10 w-44 h-44 rounded-full bg-gradient-to-b from-[#237149]/35 to-[#35C66B]/20 blur-xl pointer-events-none"></div>
+            <!-- Drink image -->
+            <div class="relative z-10 w-44 h-56 flex items-center justify-center">
+              <img src="assets/product_3.png" alt="Starbucks Drink" class="h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <!-- Info -->
+            <h4 class="text-2xl sm:text-3xl font-medium text-white mt-4">Fast</h4>
+            <p class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-1">Our cafe will serve you quickly</p>
+            <!-- Price & Size -->
+            <div class="flex items-baseline gap-3 mt-4 mb-5">
+              <span class="text-2xl sm:text-3xl font-medium text-white">7,45$</span>
+              <span class="text-base text-[#D9D9D9]">330 ml</span>
+            </div>
+            <!-- Button -->
+            <button class="w-full brand-gradient text-white font-semibold text-base py-3 rounded-full hover:brightness-110 shadow-md shadow-[#237149]/30 transition-all cursor-pointer">
+              Buy Product
+            </button>
+          </div>
+
+          <!-- Product Card 4: Cappuccino -->
+          <div class="bg-[#16191D] border border-white/10 rounded-[29px] p-6 flex flex-col items-center text-center relative overflow-hidden group hover:border-[#35C66B]/50 transition-all hover:shadow-2xl hover:shadow-[#237149]/20">
+            <!-- Radial glow background -->
+            <div class="absolute -top-10 w-44 h-44 rounded-full bg-gradient-to-b from-[#237149]/35 to-[#35C66B]/20 blur-xl pointer-events-none"></div>
+            <!-- Drink image -->
+            <div class="relative z-10 w-44 h-56 flex items-center justify-center">
+              <img src="assets/product_4.png" alt="Cappuccino" class="h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <!-- Info -->
+            <h4 class="text-2xl sm:text-3xl font-medium text-white mt-4">Cappuccino</h4>
+            <p class="text-sm sm:text-base text-[#D9D9D9] font-normal mt-1">Our cafe will serve you quickly</p>
+            <!-- Price & Size -->
+            <div class="flex items-baseline gap-3 mt-4 mb-5">
+              <span class="text-2xl sm:text-3xl font-medium text-white">7,45$</span>
+              <span class="text-base text-[#D9D9D9]">330 ml</span>
+            </div>
+            <!-- Button -->
+            <button class="w-full brand-gradient text-white font-semibold text-base py-3 rounded-full hover:brightness-110 shadow-md shadow-[#237149]/30 transition-all cursor-pointer">
+              Buy Product
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Next Arrow Indicator (Figma Rectangle 6 + Arrow 1) -->
+        <div class="hidden xl:flex absolute -right-6 top-1/2 -translate-y-1/2 translate-x-full">
+          <button class="w-16 h-16 rounded-[22px] border border-white/20 bg-[#16191D]/80 flex items-center justify-center text-white hover:border-[#35C66B] hover:text-[#35C66B] transition-all cursor-pointer shadow-lg">
+            <svg class="w-6 h-6 stroke-current fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 6. "OUR NEW EVENTS" SECTION (Group 49 in Figma) -->
+    <!-- ========================================================================= -->
+    <section id="events" class="mt-28 sm:mt-36 mb-28">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col-reverse lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <div class="max-w-md">
+          <p class="text-base sm:text-lg text-[#D9D9D9] font-normal leading-relaxed">
+            Only in 2021 we have made more than 100,000 orders for you, your loved ones, all of you, and in 2022 we are ready to destroy the market
+          </p>
+        </div>
+        <div>
+          <h2 class="text-5xl sm:text-7xl lg:text-[76px] font-extrabold text-white text-left lg:text-right leading-[1.05] tracking-tight">
+            Our New Events
+          </h2>
+        </div>
+      </div>
+
+      <!-- Events Cards Grid -->
+      <div class="space-y-6">
+
+        <!-- Top Row: 2 Wide Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- Event 1: TWO COFFEE FOR 1 PRICE (7 cols) -->
+          <div class="lg:col-span-7 relative h-[260px] rounded-[30px] overflow-hidden border border-white/10 group shadow-xl">
+            <img src="assets/event_coffee_shop.png" alt="Two Coffee for 1 Price" class="w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-7 sm:p-9 flex flex-col justify-between">
+              <h3 class="text-2xl sm:text-3xl font-medium text-white max-w-xs leading-snug">
+                TWO COFFEE FOR 1 PRICE
+              </h3>
+              <div>
+                <button class="brand-gradient text-[#D9D9D9] hover:text-white font-semibold text-lg px-8 py-2.5 rounded-full hover:brightness-110 shadow-lg shadow-[#237149]/40 transition-all cursor-pointer">
+                  More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: KITCHEN TOUR (5 cols) -->
+          <div class="lg:col-span-5 relative h-[260px] rounded-[30px] overflow-hidden border border-white/10 group shadow-xl">
+            <img src="assets/event_kitchen.png" alt="Kitchen Tour" class="w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-7 sm:p-9 flex flex-col justify-between">
+              <h3 class="text-2xl sm:text-3xl font-medium text-white max-w-xs leading-snug">
+                KITCHEN TOUR
+              </h3>
+              <div>
+                <button class="brand-gradient text-[#D9D9D9] hover:text-white font-semibold text-lg px-8 py-2.5 rounded-full hover:brightness-110 shadow-lg shadow-[#237149]/40 transition-all cursor-pointer">
+                  More
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Row: 3 Equal Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Event 3: FREE COFFEE FOR 3 COFFEE -->
+          <div class="relative h-[260px] rounded-[30px] overflow-hidden border border-white/10 group shadow-xl">
+            <img src="assets/event_free_coffee.png" alt="Free Coffee for 3 Coffee" class="w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-7 flex flex-col justify-between">
+              <h3 class="text-2xl font-medium text-white leading-snug">
+                FREE COFFEE FOR 3 COFFEE
+              </h3>
+              <div>
+                <button class="brand-gradient text-[#D9D9D9] hover:text-white font-semibold text-lg px-8 py-2.5 rounded-full hover:brightness-110 shadow-lg shadow-[#237149]/40 transition-all cursor-pointer">
+                  More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4: OUR INSTAGRAM -->
+          <div class="relative h-[260px] rounded-[30px] overflow-hidden border border-white/10 group shadow-xl">
+            <img src="assets/event_instagram.png" alt="Our Instagram" class="w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-7 flex flex-col justify-between">
+              <h3 class="text-2xl font-medium text-white leading-snug">
+                OUR INSTAGRAM
+              </h3>
+              <div>
+                <button class="brand-gradient text-[#D9D9D9] hover:text-white font-semibold text-lg px-8 py-2.5 rounded-full hover:brightness-110 shadow-lg shadow-[#237149]/40 transition-all cursor-pointer">
+                  More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5: WHERE ARE YOU CHOOSE US? -->
+          <div class="relative h-[260px] rounded-[30px] overflow-hidden border border-white/10 group shadow-xl">
+            <img src="assets/event_where_choose.png" alt="Where Are You Choose Us" class="w-full h-full object-cover brightness-[0.7] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-7 flex flex-col justify-between">
+              <h3 class="text-2xl font-medium text-white leading-snug">
+                WHERE ARE YOU CHOOSE US?
+              </h3>
+              <div>
+                <button class="brand-gradient text-[#D9D9D9] hover:text-white font-semibold text-lg px-8 py-2.5 rounded-full hover:brightness-110 shadow-lg shadow-[#237149]/40 transition-all cursor-pointer">
+                  More
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 7. "OUR CONTACTS" SECTION (Group 118 in Figma) -->
+    <!-- ========================================================================= -->
+    <section id="contacts" class="mt-28 sm:mt-36 mb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column: Title, Description & Contact Details -->
+      <div class="lg:col-span-6 flex flex-col justify-center">
+        <!-- Title -->
+        <h2 class="text-5xl sm:text-7xl lg:text-[76px] font-extrabold text-white leading-[1.05] tracking-tight">
+          Our<br>Contacts
+        </h2>
+
+        <!-- Description -->
+        <p class="text-lg sm:text-xl text-[#D9D9D9] font-normal mt-6 max-w-md leading-relaxed">
+          Have time to buy the most harmonious drinks in the new Starbucks coffee and don't forget about the discount!
+        </p>
+
+        <!-- Contact Links with Icons (Group 92 in Figma) -->
+        <div class="mt-10 space-y-6">
+          
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" class="flex items-center gap-4 group cursor-pointer w-fit">
+            <div class="w-12 h-12 rounded-xl brand-gradient flex items-center justify-center p-2.5 shadow-md group-hover:scale-110 transition-transform">
+              <img src="assets/instagram_icon.png" alt="Instagram" class="w-full h-full object-contain filter invert">
+            </div>
+            <span class="text-2xl sm:text-3xl font-medium text-white group-hover:text-[#35C66B] transition-colors">
+              @supercoffee
+            </span>
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:+79999999999" class="flex items-center gap-4 group cursor-pointer w-fit">
+            <div class="w-12 h-12 rounded-xl brand-gradient flex items-center justify-center p-2.5 shadow-md group-hover:scale-110 transition-transform">
+              <img src="assets/phone_icon.png" alt="Phone" class="w-full h-full object-contain filter invert">
+            </div>
+            <span class="text-2xl sm:text-3xl font-medium text-white group-hover:text-[#35C66B] transition-colors">
+              +7-999-999-99-99
+            </span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Barista Photo Card with Layered Accent -->
+      <div class="lg:col-span-6 relative flex items-center justify-center">
+        <!-- Offset Green Card behind (Figma Vector 41:54) -->
+        <div class="absolute w-[88%] h-[92%] bg-[#237149] rounded-[36px] rotate-3 scale-[0.98] opacity-80 blur-[1px]"></div>
+
+        <!-- Main Photo Card -->
+        <div class="relative z-10 w-full max-w-[460px] rounded-[32px] overflow-hidden shadow-2xl border border-white/10 bg-[#16191D]">
+          <img src="assets/contacts_person_latte.png" alt="Barista Preparing Coffee" class="w-full h-[460px] sm:h-[520px] object-cover">
+        </div>
+
+        <!-- Floating "we have" Star Badge (Group 50 in Figma) -->
+        <div class="absolute -top-8 -left-4 sm:-left-6 z-20 w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
+          <svg class="w-full h-full drop-shadow-xl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="badgeGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#237149"/>
+                <stop offset="100%" stop-color="#35C66B"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 0L61.2 24.5L88.3 14.6L78.4 41.7L100 50L78.4 61.2L88.3 88.3L61.2 78.4L50 100L38.8 78.4L11.7 88.3L21.6 61.2L0 50L21.6 38.8L11.7 11.7L38.8 21.6L50 0Z" fill="url(#badgeGrad3)" />
+          </svg>
+          <span class="absolute text-center text-xs sm:text-base font-bold text-white uppercase tracking-wider leading-tight">we<br>have</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /End Container -->
+
+
+  <!-- ========================================================================= -->
+  <!-- 8. FOOTER (Group 87 in Figma) -->
+  <!-- ========================================================================= -->
+  <footer class="bg-[#0B0C0D] border-t border-white/5 py-14 sm:py-20 mt-16 relative z-10">
+    <div class="max-w-[1512px] mx-auto px-6 sm:px-12 lg:px-20">
+      
+      <!-- Top Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start justify-between pb-12 border-b border-white/5">
+        
+        <!-- Logo (3 cols) -->
+        <div class="lg:col-span-3">
+          <a href="#top" class="text-3xl sm:text-4xl font-extrabold tracking-tight brand-gradient-text">
+            StarBucks
+          </a>
+        </div>
+
+        <!-- Navigation Columns (7 cols: 5 distinct sub-columns in Figma) -->
+        <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-5 gap-8 text-[#BBB3B3]">
+          
+          <!-- Col 1: Main -->
+          <div>
+            <h5 class="text-lg font-medium text-[#BBB3B3] mb-3">Main</h5>
+            <ul class="space-y-2 text-base">
+              <li><a href="#products" class="hover:text-white transition-colors">Buy</a></li>
+              <li><a href="#about" class="hover:text-white transition-colors">More</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 2: We make -->
+          <div>
+            <h5 class="text-lg font-medium text-[#BBB3B3] mb-3">We make</h5>
+            <ul class="space-y-2 text-base">
+              <li><a href="#about" class="hover:text-white transition-colors">Process</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Products -->
+          <div>
+            <h5 class="text-lg font-medium text-[#BBB3B3] mb-3">Products</h5>
+            <ul class="space-y-2 text-base">
+              <li><a href="#products" class="hover:text-white transition-colors">Cappuccino</a></li>
+              <li><a href="#products" class="hover:text-white transition-colors">Fast</a></li>
+              <li><a href="#products" class="hover:text-white transition-colors">Fast</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Events -->
+          <div>
+            <h5 class="text-lg font-medium text-[#BBB3B3] mb-3">Events</h5>
+            <ul class="space-y-2 text-base">
+              <li><a href="#events" class="hover:text-white transition-colors">Drinks</a></li>
+              <li><a href="#events" class="hover:text-white transition-colors">Eat</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: Contacts -->
+          <div>
+            <h5 class="text-lg font-medium text-[#BBB3B3] mb-3">Contacts</h5>
+            <ul class="space-y-2 text-base">
+              <li><a href="#contacts" class="hover:text-white transition-colors">Instagram</a></li>
+              <li><a href="tel:+79999999999" class="hover:text-white transition-colors">Number</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Back to Top Button (2 cols) -->
+        <div class="lg:col-span-2 flex lg:justify-end">
+          <a href="#top" class="w-14 h-14 rounded-[20px] border border-white/20 bg-[#16191D] flex items-center justify-center text-white hover:border-[#35C66B] hover:text-[#35C66B] transition-all cursor-pointer shadow-lg">
+            <!-- Arrow Up Icon -->
+            <svg class="w-6 h-6 stroke-current fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Phone Number & Social Icon -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <!-- Phone Number in Gradient -->
+        <a href="tel:+79999999999" class="text-2xl font-semibold brand-gradient-text tracking-wide hover:opacity-90 transition-opacity">
+          +7-999-999-99-99
+        </a>
+
+        <!-- Instagram link icon -->
+        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center p-2 shadow-md hover:scale-110 transition-transform">
+          <img src="assets/instagram_icon.png" alt="Instagram" class="w-full h-full object-contain filter invert">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
